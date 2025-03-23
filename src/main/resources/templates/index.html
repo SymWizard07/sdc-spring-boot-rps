@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Move</h1>
+        <div class="buttons">
+            <a href="/play?move=rock" class="rps-button" id="rock">🪨</a>
+            <a href="/play?move=paper" class="rps-button" id="paper">📄</a>
+            <a href="/play?move=scissors" class="rps-button" id="scissors">✂️</a>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            const buttons = ["rock", "paper", "scissors"];
+            buttons.forEach((id, index) => {
+                setTimeout(() => {
+                    document.getElementById(id).classList.add("fade-in");
+                }, index * 250);
+            });
+        };
+    </script>
+</body>
+</html>
